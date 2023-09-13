@@ -1,19 +1,42 @@
-function multiply(num1:number, num2:number) {
-    return num1 * num2;
-}
-
-function sum(num1:number, num2:number) {
-    return num1 * num2;
-}
-
-function isEven(num:number) {
-    return num % 2 === 0; 
-}
-
-function showResult(result:number) {
-    if(isEven(result)) {
-        console.log(`The result is ${result} and it's even!`);
-    } else {
-        console.log(`The result is ${result} and it's even!`);
-    }
-}
+type Game =  {
+    id: number;
+    platform: {
+        id: number;
+        name: string;
+    };
+    title: string;
+    publisher: string;
+    launch?: string | Date;
+  } 
+  
+  
+  const game:Game = {
+    id: 1,
+    platform: {
+        id: 1,
+        name: "Playstation"
+    },
+    title: "The Last of Us",
+    publisher: "Naughty Dog",
+    launch: "2013-06-14" // pode ser um Date. também pode ser vazio
+  }
+  
+  
+  type Games =  {
+    id: number;
+    platform: {
+        id: number;
+        name: string;
+    };
+    title: string;
+    publisher: string;
+    launch?: string | Date;
+  }[]  
+  
+  const games:Games = [game];
+  
+  
+  function play(game:Game){
+    // runs the game
+    console.log(game);
+  }

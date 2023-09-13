@@ -1,19 +1,30 @@
-function multiply(num1:number, num2:number) {
-    return num1 * num2;
+type Game = {
+    id:number,
+    plataform: {
+        id:number,
+        name:string
+    },
+    title: string,
+    publisher: string,
+    lunch: (string | Date)
 }
 
-function sum(num1:number, num2:number) {
-    return num1 * num2;
+
+const game = {
+    id: 1,
+    platform: {
+        id: 1,
+        name: "Playstation"
+    },
+    title: "The Last of Us",
+    publisher: "Naughty Dog",
+    launch: "2013-06-14" // pode ser um Date. É opcional (para jogos ainda não lançados).
 }
 
-function isEven(num:number) {
-    return num % 2 === 0; 
-}
 
-function showResult(result:number) {
-    if(isEven(result)) {
-        console.log(`The result is ${result} and it's even!`);
-    } else {
-        console.log(`The result is ${result} and it's even!`);
-    }
+const games = [game];
+
+function play(game:Game){
+    // runs the game
+    console.log(game);
 }

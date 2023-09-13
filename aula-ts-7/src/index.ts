@@ -1,19 +1,13 @@
-function multiply(num1:number, num2:number) {
-    return num1 * num2;
-}
+import express,{Request,Response} from  "express"
 
-function sum(num1:number, num2:number) {
-    return num1 * num2;
-}
+const app = express();
 
-function isEven(num:number) {
-    return num % 2 === 0; 
-}
+app.get("/health", (req:Request, res:Response) => res.status(200).send("I'm Ok!"));
+app.get("/today", (req:Request, res:Response) => {
+  res.send({
+    today: new Date().toLocaleDateString("pt-br")
+  })
+});
 
-function showResult(result:number) {
-    if(isEven(result)) {
-        console.log(`The result is ${result} and it's even!`);
-    } else {
-        console.log(`The result is ${result} and it's even!`);
-    }
-}
+const port = process.env.PORT || 5000;
+app.listen(port, () => console.log(`Server is up and running on port ${port}`));
